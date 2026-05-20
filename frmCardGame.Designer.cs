@@ -85,7 +85,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblStatus.Location = new System.Drawing.Point(302, 18);
+            this.lblStatus.Location = new System.Drawing.Point(293, 17);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(181, 24);
             this.lblStatus.TabIndex = 3;
