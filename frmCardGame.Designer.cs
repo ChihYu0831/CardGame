@@ -54,7 +54,7 @@
             // btnLevel1
             // 
             this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel1.Location = new System.Drawing.Point(69, 60);
+            this.btnLevel1.Location = new System.Drawing.Point(69, 55);
             this.btnLevel1.Name = "btnLevel1";
             this.btnLevel1.Size = new System.Drawing.Size(121, 32);
             this.btnLevel1.TabIndex = 0;
@@ -64,7 +64,7 @@
             // btnLevel2
             // 
             this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel2.Location = new System.Drawing.Point(324, 60);
+            this.btnLevel2.Location = new System.Drawing.Point(324, 55);
             this.btnLevel2.Name = "btnLevel2";
             this.btnLevel2.Size = new System.Drawing.Size(121, 32);
             this.btnLevel2.TabIndex = 1;
@@ -74,7 +74,7 @@
             // btnLevel3
             // 
             this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel3.Location = new System.Drawing.Point(579, 60);
+            this.btnLevel3.Location = new System.Drawing.Point(579, 55);
             this.btnLevel3.Name = "btnLevel3";
             this.btnLevel3.Size = new System.Drawing.Size(121, 32);
             this.btnLevel3.TabIndex = 2;
