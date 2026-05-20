@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.btnLevel1 = new System.Windows.Forms.Button();
             this.btnLevel2 = new System.Windows.Forms.Button();
             this.btnLevel3 = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.gamePanel = new System.Windows.Forms.TableLayoutPanel();
             this.pnlTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
             // 
+            this.pnlTitle.Controls.Add(this.lblStatus);
             this.pnlTitle.Controls.Add(this.btnLevel3);
             this.pnlTitle.Controls.Add(this.btnLevel2);
             this.pnlTitle.Controls.Add(this.btnLevel1);
@@ -49,7 +54,7 @@
             // btnLevel1
             // 
             this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel1.Location = new System.Drawing.Point(59, 38);
+            this.btnLevel1.Location = new System.Drawing.Point(69, 60);
             this.btnLevel1.Name = "btnLevel1";
             this.btnLevel1.Size = new System.Drawing.Size(121, 32);
             this.btnLevel1.TabIndex = 0;
@@ -59,7 +64,7 @@
             // btnLevel2
             // 
             this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel2.Location = new System.Drawing.Point(186, 38);
+            this.btnLevel2.Location = new System.Drawing.Point(324, 60);
             this.btnLevel2.Name = "btnLevel2";
             this.btnLevel2.Size = new System.Drawing.Size(121, 32);
             this.btnLevel2.TabIndex = 1;
@@ -69,23 +74,51 @@
             // btnLevel3
             // 
             this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel3.Location = new System.Drawing.Point(350, 38);
+            this.btnLevel3.Location = new System.Drawing.Point(579, 60);
             this.btnLevel3.Name = "btnLevel3";
             this.btnLevel3.Size = new System.Drawing.Size(121, 32);
             this.btnLevel3.TabIndex = 2;
             this.btnLevel3.Text = "第三關 (8x8)";
             this.btnLevel3.UseVisualStyleBackColor = true;
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblStatus.Location = new System.Drawing.Point(302, 18);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(181, 24);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "請選擇關卡開始遊戲";
+            // 
+            // gameTimer
+            // 
+            this.gameTimer.Interval = 800;
+            // 
+            // gamePanel
+            // 
+            this.gamePanel.ColumnCount = 1;
+            this.gamePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gamePanel.Location = new System.Drawing.Point(0, 105);
+            this.gamePanel.Name = "gamePanel";
+            this.gamePanel.RowCount = 1;
+            this.gamePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.gamePanel.Size = new System.Drawing.Size(800, 345);
+            this.gamePanel.TabIndex = 1;
+            // 
             // frmCardGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.pnlTitle);
             this.Name = "frmCardGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "棋牌類遊戲";
             this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -96,6 +129,9 @@
         private System.Windows.Forms.Button btnLevel3;
         private System.Windows.Forms.Button btnLevel2;
         private System.Windows.Forms.Button btnLevel1;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.TableLayoutPanel gamePanel;
     }
 }
 
