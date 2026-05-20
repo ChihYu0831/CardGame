@@ -15,6 +15,11 @@ namespace CardGame
         public frmCardGame()
         {
             InitializeComponent();
+
+            
         }
+
+        
+        
     }
 }
