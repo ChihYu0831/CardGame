@@ -64,6 +64,20 @@ namespace CardGame
 
             lblStatus.Text = "請選擇關卡開始遊戲";
 
+            MessageBox.Show(
+                "歡迎來到記憶翻牌遊戲！!\n\n" +
+                "遊戲玩法：\n" +
+                "1. 請先選擇關卡。\n" +
+                "2. 每次可以翻開兩張牌。\n" +
+                "3. 如果兩張圖片相同，就會配對成功。\n" +
+                "4. 如果兩張圖片不同，牌會自動蓋回去。\n" +
+                "5. 將所有牌成功配對即可過關。\n\n" +
+                "關卡難度：4 × 4 , 6 × 6 , 8 × 8",
+                "遊戲說明",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
         }
 
         private void SetupUI()
