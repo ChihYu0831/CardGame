@@ -48,7 +48,7 @@
             this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitle.Location = new System.Drawing.Point(0, 0);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(800, 105);
+            this.pnlTitle.Size = new System.Drawing.Size(900, 105);
             this.pnlTitle.TabIndex = 0;
             // 
             // lblStatus
@@ -110,14 +110,14 @@
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.RowCount = 1;
             this.gamePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gamePanel.Size = new System.Drawing.Size(800, 412);
+            this.gamePanel.Size = new System.Drawing.Size(900, 612);
             this.gamePanel.TabIndex = 1;
             // 
             // frmCardGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 517);
+            this.ClientSize = new System.Drawing.Size(900, 717);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.pnlTitle);
             this.Name = "frmCardGame";
