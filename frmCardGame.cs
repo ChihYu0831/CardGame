@@ -83,6 +83,13 @@ namespace CardGame
 
         }
 
+        private void SetLevelButtonsEnabled(bool enabled)
+        {
+            btnLevel1.Enabled = enabled;
+            btnLevel2.Enabled = enabled;
+            btnLevel3.Enabled = enabled;
+        }
+
         private void SetupUI()
         {
             this.BackColor = Color.FromArgb(245, 247, 250);
@@ -200,6 +207,9 @@ namespace CardGame
             firstCard = null;
             secondCard = null;
             isChecking = false;
+
+            // 遊戲開始後，三個關卡按鈕先不能按
+            SetLevelButtonsEnabled(false);
 
             gameTimer.Stop();
             checkTimer.Stop();
@@ -383,6 +393,9 @@ namespace CardGame
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
                     );
+
+                    // 過關後，重新開啟關卡按鈕
+                    SetLevelButtonsEnabled(true);
                 }
             }
             else
