@@ -68,7 +68,6 @@ namespace CardGame
 
         private void SetupUI()
         {
-            this.Text = "記憶翻牌遊戲";
             this.BackColor = Color.FromArgb(245, 247, 250);
 
             lblStatus.AutoSize = false;
