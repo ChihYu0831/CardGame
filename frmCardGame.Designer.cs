@@ -55,7 +55,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lblStatus.Location = new System.Drawing.Point(297, 21);
+            this.lblStatus.Location = new System.Drawing.Point(357, 22);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(181, 24);
             this.lblStatus.TabIndex = 3;
@@ -65,7 +65,7 @@
             // btnLevel3
             // 
             this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel3.Location = new System.Drawing.Point(579, 58);
+            this.btnLevel3.Location = new System.Drawing.Point(705, 58);
             this.btnLevel3.Name = "btnLevel3";
             this.btnLevel3.Size = new System.Drawing.Size(121, 32);
             this.btnLevel3.TabIndex = 2;
@@ -76,7 +76,7 @@
             // btnLevel2
             // 
             this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel2.Location = new System.Drawing.Point(324, 58);
+            this.btnLevel2.Location = new System.Drawing.Point(387, 58);
             this.btnLevel2.Name = "btnLevel2";
             this.btnLevel2.Size = new System.Drawing.Size(121, 32);
             this.btnLevel2.TabIndex = 1;

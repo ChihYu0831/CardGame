@@ -75,10 +75,10 @@ namespace CardGame
             this.Text = "記憶翻牌遊戲";
             this.BackColor = Color.FromArgb(245, 247, 250);
 
-            lblStatus.Dock = DockStyle.Bottom;
+            lblStatus.Dock = DockStyle.Top;
             lblStatus.Height = 45;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            lblStatus.Font = new Font("Microsoft JhengHei", 12, FontStyle.Bold);
+            lblStatus.Font = new Font("Microsoft JhengHei", 18, FontStyle.Bold);
             lblStatus.BackColor = Color.FromArgb(40, 55, 71);
             lblStatus.ForeColor = Color.White;
             lblStatus.BringToFront();
