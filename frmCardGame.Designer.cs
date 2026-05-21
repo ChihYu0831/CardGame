@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.btnLevel1 = new System.Windows.Forms.Button();
-            this.btnLevel2 = new System.Windows.Forms.Button();
-            this.btnLevel3 = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnLevel3 = new System.Windows.Forms.Button();
+            this.btnLevel2 = new System.Windows.Forms.Button();
+            this.btnLevel1 = new System.Windows.Forms.Button();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.gamePanel = new System.Windows.Forms.TableLayoutPanel();
             this.pnlTitle.SuspendLayout();
@@ -51,36 +51,6 @@
             this.pnlTitle.Size = new System.Drawing.Size(800, 105);
             this.pnlTitle.TabIndex = 0;
             // 
-            // btnLevel1
-            // 
-            this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel1.Location = new System.Drawing.Point(69, 55);
-            this.btnLevel1.Name = "btnLevel1";
-            this.btnLevel1.Size = new System.Drawing.Size(121, 32);
-            this.btnLevel1.TabIndex = 0;
-            this.btnLevel1.Text = "第一關 (4x4)";
-            this.btnLevel1.UseVisualStyleBackColor = true;
-            // 
-            // btnLevel2
-            // 
-            this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel2.Location = new System.Drawing.Point(324, 55);
-            this.btnLevel2.Name = "btnLevel2";
-            this.btnLevel2.Size = new System.Drawing.Size(121, 32);
-            this.btnLevel2.TabIndex = 1;
-            this.btnLevel2.Text = "第二關 (6x6)";
-            this.btnLevel2.UseVisualStyleBackColor = true;
-            // 
-            // btnLevel3
-            // 
-            this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel3.Location = new System.Drawing.Point(579, 55);
-            this.btnLevel3.Name = "btnLevel3";
-            this.btnLevel3.Size = new System.Drawing.Size(121, 32);
-            this.btnLevel3.TabIndex = 2;
-            this.btnLevel3.Text = "第三關 (8x8)";
-            this.btnLevel3.UseVisualStyleBackColor = true;
-            // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
@@ -91,12 +61,47 @@
             this.lblStatus.TabIndex = 3;
             this.lblStatus.Text = "請選擇關卡開始遊戲";
             // 
+            // btnLevel3
+            // 
+            this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel3.Location = new System.Drawing.Point(579, 55);
+            this.btnLevel3.Name = "btnLevel3";
+            this.btnLevel3.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel3.TabIndex = 2;
+            this.btnLevel3.Text = "第三關 (8x8)";
+            this.btnLevel3.UseVisualStyleBackColor = true;
+            this.btnLevel3.Click += new System.EventHandler(this.btnLevel3_Click);
+            // 
+            // btnLevel2
+            // 
+            this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel2.Location = new System.Drawing.Point(324, 55);
+            this.btnLevel2.Name = "btnLevel2";
+            this.btnLevel2.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel2.TabIndex = 1;
+            this.btnLevel2.Text = "第二關 (6x6)";
+            this.btnLevel2.UseVisualStyleBackColor = true;
+            this.btnLevel2.Click += new System.EventHandler(this.btnLevel2_Click);
+            // 
+            // btnLevel1
+            // 
+            this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel1.Location = new System.Drawing.Point(69, 55);
+            this.btnLevel1.Name = "btnLevel1";
+            this.btnLevel1.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel1.TabIndex = 0;
+            this.btnLevel1.Text = "第一關 (4x4)";
+            this.btnLevel1.UseVisualStyleBackColor = true;
+            this.btnLevel1.Click += new System.EventHandler(this.btnLevel1_Click);
+            // 
             // gameTimer
             // 
             this.gameTimer.Interval = 800;
+            this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // gamePanel
             // 
+            this.gamePanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.gamePanel.ColumnCount = 1;
             this.gamePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
