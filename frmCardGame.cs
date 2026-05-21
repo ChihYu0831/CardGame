@@ -58,10 +58,6 @@ namespace CardGame
             LoadSounds();
             SetupUI();
 
-            // 設定遊戲計時器
-            gameTimer.Interval = 1000;
-            gameTimer.Tick += gameTimer_Tick;
-
             // 設定檢查配對用的 Timer
             checkTimer.Interval = 800;
             checkTimer.Tick += checkTimer_Tick;
@@ -75,10 +71,11 @@ namespace CardGame
             this.Text = "記憶翻牌遊戲";
             this.BackColor = Color.FromArgb(245, 247, 250);
 
+            lblStatus.AutoSize = false;
             lblStatus.Dock = DockStyle.Top;
-            lblStatus.Height = 45;
+            lblStatus.Height = 40;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            lblStatus.Font = new Font("Microsoft JhengHei", 18, FontStyle.Bold);
+            lblStatus.Font = new Font("Microsoft JhengHei", 14, FontStyle.Bold);
             lblStatus.BackColor = Color.FromArgb(40, 55, 71);
             lblStatus.ForeColor = Color.White;
             lblStatus.BringToFront();

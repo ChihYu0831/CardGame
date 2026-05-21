@@ -97,7 +97,7 @@
             // 
             // gameTimer
             // 
-            this.gameTimer.Interval = 800;
+            this.gameTimer.Interval = 1000;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // gamePanel
