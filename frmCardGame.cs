@@ -47,7 +47,6 @@ namespace CardGame
         private Image cardBackImage;
         private Dictionary<int, Image> cardImages = new Dictionary<int, Image>();
 
-        private SoundPlayer flipPlayer;
         private SoundPlayer matchPlayer;
         private SoundPlayer wrongPlayer;
 
@@ -134,14 +133,8 @@ namespace CardGame
         {
             string soundFolder = Path.Combine(Application.StartupPath, "Sounds");
 
-            string flipPath = Path.Combine(soundFolder, "flip.wav");
             string matchPath = Path.Combine(soundFolder, "match.wav");
             string wrongPath = Path.Combine(soundFolder, "wrong.wav");
-
-            if (File.Exists(flipPath))
-            {
-                flipPlayer = new SoundPlayer(flipPath);
-            }
 
             if (File.Exists(matchPath))
             {
@@ -321,8 +314,6 @@ namespace CardGame
             }
 
             card.BackColor = Color.White;
-
-            PlaySound(flipPlayer);
         }
 
         private void HideCard(Button card)
