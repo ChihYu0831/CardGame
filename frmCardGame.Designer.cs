@@ -69,7 +69,7 @@
             this.btnLevel3.Name = "btnLevel3";
             this.btnLevel3.Size = new System.Drawing.Size(131, 32);
             this.btnLevel3.TabIndex = 2;
-            this.btnLevel3.Text = "8x8";
+            this.btnLevel3.Text = "困難(8x8)";
             this.btnLevel3.UseVisualStyleBackColor = true;
             this.btnLevel3.Click += new System.EventHandler(this.btnLevel3_Click);
             // 
@@ -80,7 +80,7 @@
             this.btnLevel2.Name = "btnLevel2";
             this.btnLevel2.Size = new System.Drawing.Size(131, 32);
             this.btnLevel2.TabIndex = 1;
-            this.btnLevel2.Text = "6x6";
+            this.btnLevel2.Text = "中等(6x6)";
             this.btnLevel2.UseVisualStyleBackColor = true;
             this.btnLevel2.Click += new System.EventHandler(this.btnLevel2_Click);
             // 
@@ -91,7 +91,7 @@
             this.btnLevel1.Name = "btnLevel1";
             this.btnLevel1.Size = new System.Drawing.Size(131, 32);
             this.btnLevel1.TabIndex = 0;
-            this.btnLevel1.Text = "4x4";
+            this.btnLevel1.Text = "簡單(4x4)";
             this.btnLevel1.UseVisualStyleBackColor = true;
             this.btnLevel1.Click += new System.EventHandler(this.btnLevel1_Click);
             // 
