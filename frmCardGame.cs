@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
 
 namespace CardGame
 {
@@ -42,9 +44,20 @@ namespace CardGame
         // 用來延遲蓋牌的 Timer
         private Timer checkTimer = new Timer();
 
+        private Image cardBackImage;
+        private Dictionary<int, Image> cardImages = new Dictionary<int, Image>();
+
+        private SoundPlayer flipPlayer;
+        private SoundPlayer matchPlayer;
+        private SoundPlayer wrongPlayer;
+
         public frmCardGame()
         {
             InitializeComponent();
+
+            LoadImages();
+            LoadSounds();
+            SetupUI();
 
             // 設定遊戲計時器
             gameTimer.Interval = 1000;
@@ -56,6 +69,104 @@ namespace CardGame
 
             lblStatus.Text = "請選擇關卡開始遊戲";
 
+        }
+
+        private void SetupUI()
+        {
+            this.Text = "記憶翻牌遊戲";
+            this.BackColor = Color.FromArgb(245, 247, 250);
+
+            lblStatus.Dock = DockStyle.Bottom;
+            lblStatus.Height = 45;
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            lblStatus.Font = new Font("Microsoft JhengHei", 12, FontStyle.Bold);
+            lblStatus.BackColor = Color.FromArgb(40, 55, 71);
+            lblStatus.ForeColor = Color.White;
+            lblStatus.BringToFront();
+
+            SetupLevelButton(btnLevel1);
+            SetupLevelButton(btnLevel2);
+            SetupLevelButton(btnLevel3);
+
+            gamePanel.BackColor = Color.FromArgb(230, 236, 240);
+            gamePanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
+        }
+
+        private void SetupLevelButton(Button button)
+        {
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+            button.BackColor = Color.FromArgb(93, 173, 226);
+            button.ForeColor = Color.White;
+            button.Font = new Font("Microsoft JhengHei", 11, FontStyle.Bold);
+            button.Cursor = Cursors.Hand;
+        }
+
+        private void LoadImages()
+        {
+            string imageFolder = Path.Combine(Application.StartupPath, "Images");
+
+            string backPath = Path.Combine(imageFolder, "card_back.png");
+
+            if (File.Exists(backPath))
+            {
+                cardBackImage = Image.FromFile(backPath);
+            }
+            else
+            {
+                MessageBox.Show("找不到牌背圖片：card_back.png");
+            }
+
+            cardImages.Clear();
+
+            for (int i = 1; i <= 32; i++)
+            {
+                string imagePath = Path.Combine(imageFolder, "card_" + i + ".png");
+
+                if (File.Exists(imagePath))
+                {
+                    cardImages[i] = Image.FromFile(imagePath);
+                }
+            }
+        }
+
+        private void LoadSounds()
+        {
+            string soundFolder = Path.Combine(Application.StartupPath, "Sounds");
+
+            string flipPath = Path.Combine(soundFolder, "flip.wav");
+            string matchPath = Path.Combine(soundFolder, "match.wav");
+            string wrongPath = Path.Combine(soundFolder, "wrong.wav");
+
+            if (File.Exists(flipPath))
+            {
+                flipPlayer = new SoundPlayer(flipPath);
+            }
+
+            if (File.Exists(matchPath))
+            {
+                matchPlayer = new SoundPlayer(matchPath);
+            }
+
+            if (File.Exists(wrongPath))
+            {
+                wrongPlayer = new SoundPlayer(wrongPath);
+            }
+        }
+
+        private void PlaySound(SoundPlayer player)
+        {
+            try
+            {
+                if (player != null)
+                {
+                    player.Play();
+                }
+            }
+            catch
+            {
+                // 如果音效播放失敗，不讓遊戲當掉
+            }
         }
 
         private void btnLevel1_Click(object sender, EventArgs e)
@@ -121,10 +232,24 @@ namespace CardGame
                     card.Dock = DockStyle.Fill;
                     card.Margin = new Padding(5);
                     card.Font = new Font("Microsoft JhengHei", 16, FontStyle.Bold);
-                    card.Text = "?";
+                    card.Text = "";
                     card.Tag = cardValues[index];
                     card.BackColor = Color.LightSteelBlue;
+                    card.FlatStyle = FlatStyle.Flat;
+                    card.FlatAppearance.BorderSize = 2;
+                    card.FlatAppearance.BorderColor = Color.White;
+                    card.Cursor = Cursors.Hand;
                     card.Click += Card_Click;
+
+                    if (cardBackImage != null)
+                    {
+                        card.BackgroundImage = cardBackImage;
+                        card.BackgroundImageLayout = ImageLayout.Zoom;
+                    }
+                    else
+                    {
+                        card.Text = "?";
+                    }
 
                     gamePanel.Controls.Add(card, col, row);
                     index++;
@@ -157,8 +282,10 @@ namespace CardGame
             if (clickedCard == null)
                 return;
 
-            // 已經翻開或已經配對的牌不能再點
-            if (clickedCard.Text != "?")
+            if (clickedCard == firstCard)
+                return;
+
+            if (!clickedCard.Enabled)
                 return;
 
             FlipCard(clickedCard);
@@ -179,13 +306,39 @@ namespace CardGame
 
         private void FlipCard(Button card)
         {
-            card.Text = card.Tag.ToString();
+            int value = Convert.ToInt32(card.Tag);
+
+            card.Text = "";
+
+            if (cardImages.ContainsKey(value))
+            {
+                card.BackgroundImage = cardImages[value];
+                card.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                card.Text = value.ToString();
+            }
+
             card.BackColor = Color.White;
+
+            PlaySound(flipPlayer);
         }
 
         private void HideCard(Button card)
         {
-            card.Text = "?";
+            card.Text = "";
+
+            if (cardBackImage != null)
+            {
+                card.BackgroundImage = cardBackImage;
+                card.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+            else
+            {
+                card.Text = "?";
+            }
+
             card.BackColor = Color.LightSteelBlue;
         }
 
@@ -198,6 +351,8 @@ namespace CardGame
 
             if (firstValue == secondValue)
             {
+                PlaySound(matchPlayer);
+
                 firstCard.BackColor = Color.LightGreen;
                 secondCard.BackColor = Color.LightGreen;
 
@@ -228,6 +383,7 @@ namespace CardGame
             }
             else
             {
+                PlaySound(wrongPlayer);
                 checkTimer.Start();
             }
         }
