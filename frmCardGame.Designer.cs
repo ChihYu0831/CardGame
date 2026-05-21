@@ -64,34 +64,34 @@
             // 
             // btnLevel3
             // 
-            this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel3.Location = new System.Drawing.Point(705, 58);
+            this.btnLevel3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel3.Location = new System.Drawing.Point(695, 58);
             this.btnLevel3.Name = "btnLevel3";
-            this.btnLevel3.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel3.Size = new System.Drawing.Size(131, 32);
             this.btnLevel3.TabIndex = 2;
-            this.btnLevel3.Text = "第三關 (8x8)";
+            this.btnLevel3.Text = "8x8";
             this.btnLevel3.UseVisualStyleBackColor = true;
             this.btnLevel3.Click += new System.EventHandler(this.btnLevel3_Click);
             // 
             // btnLevel2
             // 
-            this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnLevel2.Location = new System.Drawing.Point(387, 58);
+            this.btnLevel2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel2.Location = new System.Drawing.Point(382, 58);
             this.btnLevel2.Name = "btnLevel2";
-            this.btnLevel2.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel2.Size = new System.Drawing.Size(131, 32);
             this.btnLevel2.TabIndex = 1;
-            this.btnLevel2.Text = "第二關 (6x6)";
+            this.btnLevel2.Text = "6x6";
             this.btnLevel2.UseVisualStyleBackColor = true;
             this.btnLevel2.Click += new System.EventHandler(this.btnLevel2_Click);
             // 
             // btnLevel1
             // 
-            this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLevel1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnLevel1.Location = new System.Drawing.Point(69, 58);
             this.btnLevel1.Name = "btnLevel1";
-            this.btnLevel1.Size = new System.Drawing.Size(121, 32);
+            this.btnLevel1.Size = new System.Drawing.Size(131, 32);
             this.btnLevel1.TabIndex = 0;
-            this.btnLevel1.Text = "第一關 (4x4)";
+            this.btnLevel1.Text = "4x4";
             this.btnLevel1.UseVisualStyleBackColor = true;
             this.btnLevel1.Click += new System.EventHandler(this.btnLevel1_Click);
             // 

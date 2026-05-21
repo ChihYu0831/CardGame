@@ -74,7 +74,7 @@ namespace CardGame
             lblStatus.Dock = DockStyle.Top;
             lblStatus.Height = 40;
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
-            lblStatus.Font = new Font("Microsoft JhengHei", 14, FontStyle.Bold);
+            lblStatus.Font = new Font("Microsoft JhengHei", 15, FontStyle.Bold);
             lblStatus.BackColor = Color.FromArgb(40, 55, 71);
             lblStatus.ForeColor = Color.White;
             lblStatus.BringToFront();
@@ -93,7 +93,7 @@ namespace CardGame
             button.FlatAppearance.BorderSize = 0;
             button.BackColor = Color.FromArgb(93, 173, 226);
             button.ForeColor = Color.White;
-            button.Font = new Font("Microsoft JhengHei", 11, FontStyle.Bold);
+            button.Font = new Font("Microsoft JhengHei", 13, FontStyle.Bold);
             button.Cursor = Cursors.Hand;
         }
 
