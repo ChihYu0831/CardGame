@@ -90,3 +90,14 @@
 8. 過關後可以重新選擇關卡再次遊玩。
 
 ---
+
+<img width="385" height="391" alt="image" src="https://github.com/user-attachments/assets/1f7c6f01-9a3a-48ad-8e4d-cd30c21410f9" />
+
+<img width="1136" height="940" alt="image" src="https://github.com/user-attachments/assets/5fa642b9-2254-47ff-ab6e-f13634ac1694" />
+
+<img width="1135" height="942" alt="image" src="https://github.com/user-attachments/assets/793e6df6-d49e-4c93-8f21-9cd0bc8797d1" />
+
+<img width="1134" height="940" alt="image" src="https://github.com/user-attachments/assets/80b96da5-d7e9-446e-a08a-5f7c43e16a24" />
+
+<img width="1134" height="940" alt="image" src="https://github.com/user-attachments/assets/538ccdda-66f2-40c3-816e-d088bf44ad85" />
+
